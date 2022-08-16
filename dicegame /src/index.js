@@ -3,13 +3,27 @@
 import ReactDOM from 'react-dom/client';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<h1 className='hi'>안녕 리액트!</h1>);
-// root에다가 render
-/*
-리액트에서는 render메소드로 html태그를 만들어줌(JSX 문법)
-JavaScript 확장한 문법이기 때문에 모든 문법을 쓸 수 있는 건 아니다! 
-1. class 속성을 작성하려면 -> className 으로 작성해야함
-2. for 도 사용불가 -> htmlFor 으로 작성필요
-3. 이벤트 핸들러들은 Camel Case로 작성필요
-  ex) onblur -> onBlur, onfocus -> onFocus, onmounsedown -> onMouseDown
+
+const product = 'macbook'; 
+const imageUrl = 'https://itimg.chosun.com/sitedata/image/202110/19/2021101900339_0.jpg'; 
+
+function handleClick() {
+  alert('곧 도착합니다!');
+}
+
+root.render(
+  <>
+    <h1>나만의 { product.toUpperCase() } 주문하기</h1>
+    {/* product.toUpperCase() 처럼 메소드 사용가능 */}
+    <img src={ imageUrl } alt='제품사진' />
+    {/* 이미지 주소 등도 따옴표 안쓰고 중괄호로만!!  */}
+    <button onClick={ handleClick }>확인</button>
+    {/* function 실행도 중괄호 사용!! */}
+  </>
+);
+// 중괄호 내에서는 Javascript 문법을 모두 사용가능 하다~~! 
+/* 주의사항 
+- 중괄호 안에는 자바스크립트 표현식만 사용할 수 있다 
+-> 죽 if, for문 등 함수 선언과 같은 문장은 사용 불가
 */
+
