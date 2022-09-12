@@ -90,6 +90,7 @@ export default Dice;
 
 # children 
 * 컴포넌트의 자식들을 값으로 갖는 prop
+* JSX 문법으로 컴포넌트를 작성할 때 컴포넌트를 단일 태그가 아니라 여는 태그와 닫는 태그의 형태로 작성하면, 그 안에 작성된 코드가 바로 이 children 값에 담기게 됨
 ### 사용예시
 ```js
 //Button.js
